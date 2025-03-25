@@ -4,6 +4,7 @@ import torchvision.transforms as T
 from torchvision.datasets import ImageFolder
 from torch.utils.data import DataLoader
 from models.costumnet import CustomNet
+import wandb
 
 def train(epoch, model, train_loader, criterion, optimizer):
     model.train()
@@ -29,8 +30,13 @@ def train(epoch, model, train_loader, criterion, optimizer):
     train_loss = running_loss / len(train_loader)
     train_accuracy = 100. * correct / total
     print(f'Train Epoch: {epoch} Loss: {train_loss:.6f} Acc: {train_accuracy:.2f}%')
+    return train_loss
 
 def main():
+    wandb.init(project="tiny-imagenet")
+    config = wandb.config
+    config.learning_rate = 0.001
+
     transform = T.Compose([
         T.ToTensor(),
         T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
@@ -45,7 +51,8 @@ def main():
 
     num_epochs = 10
     for epoch in range(1, num_epochs + 1):
-        train(epoch, model, train_loader, criterion, optimizer)
+        loss = train(epoch, model, train_loader, criterion, optimizer)
+        wandb.log({"loss": loss})
     
     torch.save(model.state_dict(), "model.pth")
     print("Model saved successfully.")

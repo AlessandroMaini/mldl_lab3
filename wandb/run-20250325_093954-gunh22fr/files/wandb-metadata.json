@@ -1,0 +1,31 @@
+{
+  "os":  "Windows-11-10.0.26100-SP0",
+  "python":  "CPython 3.12.7",
+  "startedAt":  "2025-03-25T08:39:54.687996Z",
+  "program":  "c:\\Users\\allem\\Documents\\MLDL\\mldl_lab3\\train.py",
+  "codePath":  "train.py",
+  "git":  {
+    "remote":  "https://github.com/AlessandroMaini/mldl_lab3.git",
+    "commit":  "7356aca359c4f6f1122ea4203daac5da135301ca"
+  },
+  "email":  "alle.maini2003@gmail.com",
+  "root":  "C:\\Users\\allem\\Documents\\MLDL\\mldl_lab3",
+  "host":  "inspiron",
+  "executable":  "C:\\Users\\allem\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "codePathLocal":  "train.py",
+  "cpu_count":  10,
+  "cpu_count_logical":  12,
+  "disk":  {
+    "/":  {
+      "total":  "997906706432",
+      "used":  "124512260096"
+    }
+  },
+  "memory":  {
+    "total":  "16849256448"
+  },
+  "cpu":  {
+    "count":  10,
+    "countLogical":  12
+  }
+}
