@@ -3,7 +3,7 @@ from torch import nn
 import torchvision.transforms as T
 from torchvision.datasets import ImageFolder
 from torch.utils.data import DataLoader
-from model.custom_net import CustomNet
+from models.costumnet import CustomNet
 
 def validate(model, val_loader, criterion):
     model.eval()
